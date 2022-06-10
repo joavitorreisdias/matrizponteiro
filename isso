@@ -1,0 +1,34 @@
+#include <stdio.h>
+void acharmaior(int *pf){
+    int *p = pf;
+    int vetmaior[3];
+    for(int j =0; j< 3;j++){
+        vetmaior[j] = 0;
+    }
+    for(int j =0; j< 3;j++){
+        for(int i =0; i< 3;i++){
+            if(vetmaior[j] < p[i*3 + j]){
+                vetmaior[j] = p[i*3 + j];
+            }
+
+        }
+    }
+    printf("\n o vetmaior é{");
+    for(int j =0; j< 3;j++){
+        printf(" %i,",vetmaior[j]);
+    }
+    printf("}");
+}
+
+void main() {
+    int f[3][3];
+    srand(time(NULL));
+    for(int i =0; i< 3;i++){
+        for(int j =0; j< 3;j++){
+            f[i][j] = rand() %33;
+            printf(" %i", f[i][j]);
+        }
+        printf("\n");
+    }
+    acharmaior(&f);
+}
